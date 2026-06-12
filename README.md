@@ -37,26 +37,29 @@ REST APIs → Python Ingestion → AWS S3 → Snowflake Stages → dbt Models �
 - Enabled analysts to fully self-serve with standardized, tested business logic
 
 ## Project Structure
-ingestion/
 
-auth/         # OAuth, API key, JWT handlers
+├── ingestion/
 
-clients/      # Per-endpoint API clients
+│   ├── auth/          # OAuth, API key, JWT handlers
 
-loaders/      # Snowflake stage uploaders
+│   ├── clients/       # Per-endpoint API clients
 
-dbt/
+│   └── loaders/       # Snowflake stage uploaders
 
-models/
+├── dbt/
 
-staging/        # Raw source cleaning
+│   ├── models/
 
-intermediate/   # Business logic
+│   │   ├── staging/   # Raw source cleaning
 
-mart/           # Final dimensional models
+│   │   ├── intermediate/  # Business logic
 
-tests/            # dbt data quality tests
+│   │   └── mart/      # Final dimensional models
 
-dags/               # Airflow DAG definitions
+│   └── tests/         # dbt data quality tests
 
-expectations/       # Great Expectations suites
+├── dags/              # Airflow DAG definitions
+
+└── expectations/      # Great Expectations suites
+
+
